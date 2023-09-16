@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car rental</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="site-header__wrapper">
+                <a class="logo header-logo" href="#">
+                    <img class="logo__img" src="./images/svg/logo.svg" width="150" height="40" alt="Car rental's logo">
+                </a>
+                <div class="site-header__inner-wrapper inner-header js-inner-header">
+                    <div class="inner-header__wrapper">
+                        <a class="logo" href="#">
+                            <img class="logo__img" src="./images/svg/logo.svg" width="150" height="40" alt="Car rental's logo">
+                        </a>
+                        <button class="inner-header__close-btn js-close-btn" type="button"></button>
+                    </div>
+                    <nav class="site-header__nav">
+                        <ul class="site-header__list">
+                            <li class="site-header__item">
+                                <a class="site-header__link" href="#">
+                                    Categories
+                                </a>
+                            </li>
+                            <li class="site-header__item">
+                                <a class="site-header__link" href="#">
+                                    About Us
+                                </a>
+                                <ul class="site-header__inner-list">
+                                    <li class="site-header__inner-item">
+                                        <a class="site-header__inner-link" href="#">
+                                            News        
+                                        </a>
+                                    </li>
+                                    <li class="site-header__inner-item">
+                                        <a class="site-header__inner-link" href="#">
+                                            Careers
+                                        </a>
+                                    </li>
+                                    <li class="site-header__inner-item">
+                                        <a class="site-header__inner-link" href="#">
+                                            Locations
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="site-header__item">
+                                <a class="site-header__link" href="#">
+                                    Help center
+                                </a>
+                                <ul class="site-header__inner-list site-header__inner-list--longer">
+                                    <li class="site-header__inner-item">
+                                        <a class="site-header__inner-link" href="#">
+                                            FAQ
+                                        </a>
+                                    </li>
+                                    <li class="site-header__inner-item">
+                                        <a class="site-header__inner-link" href="#">
+                                            Contact us
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </nav>
+                    <a class="site-header__tel-link" href="tel:+18554200000">
+                        +1 855 420 0000
+                    </a>
+                    <div class="site-header__btn-wrapper">
+                        <a class="site-header__btn-tel-link" href="tel:+18554200000">
+                            +1 855 420 0000
+                        </a>
+                        <button class="site-header__mode-btn" type="button"></button>
+                        <button class="site-header__login-btn" type="button">Login</button>
+                    </div>
+                </div>
+                <button class="site-header__menu-btn js-menu-btn"></button>
+            </div>
+        </div>
+        <div class="overlay js-overlay"></div>
+    </header>
+    <main class="site-main">
+        <section class="hero">
+            <h1 class="visually-hidden">Car rental</h1>
+            <div class="container">
+                <div class="hero__wrapper">
+                   <div class="hero__slider-outer">
+                    <div class="hero__slider-wrapper">
+                        <div class="hero__slider hero__slider--one active-slide">
+                            <div class="hero__slider-details-wrapper">
+                                <h2 class="hero__slider-title" title="Compact cars">
+                                    Compact cars
+                                </h2>
+                                <p class="hero__slider-desc" title="Rent cars as you are comfortable and where you are comfortable.">
+                                    Rent cars as you are comfortable and where you are comfortable.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hero__slider hero__slider--two">
+                            <div class="hero__slider-details-wrapper">
+                                <h2 class="hero__slider-title" title="Sport cars">
+                                    Sport cars
+                                </h2>
+                                <p class="hero__slider-desc" title="Rent cars as you are comfortable and where you are comfortable.">
+                                    Rent cars as you are comfortable and where you are comfortable.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="hero__slider hero__slider--three">
+                            <div class="hero__slider-details-wrapper">
+                                <h2 class="hero__slider-title" title="Vans">
+                                    Vans
+                                </h2>
+                                <p class="hero__slider-desc" title="Rent cars as you are comfortable and where you are comfortable.">
+                                    Rent cars as you are comfortable and where you are comfortable.
+                                </p>
+                            </div>
+                        </div>
+                   </div>
+                   </div>
+                   <div class="hero__slider-controller-wrapper">
+                        <div class="hero__slider-view">
+                            <span class="hero__slider-item active-slider-item"></span>
+                            <span class="hero__slider-item"></span>
+                            <span class="hero__slider-item"></span>
+                        </div>
+                        <div class="hero__slider-controller">
+                            <button class="hero__slider-btn slider-prev-btn" type="button"></button>
+                            <button class="hero__slider-btn slider-next-btn" type="button"></button>
+                        </div>
+                   </div>
+                   <form class="hero__form" action="https://echo.htmlacademy.ru/courses" method="GET" autocomplete="off">
+                    <input class="hero__input" type="search" name="user_search_query" placeholder="Find the car of your dreams" aria-label="Find the car of your dreams" required>
+                    <button class="hero__form-btn" type="submit"></button>
+                   </form>
+                </div>
+            </div>
+        </section>
+        <section class="products">
+            <div class="container">
+                <div class="products__wrapper">
+                    <div class="products__details-wrapper">
+                        <div class="products__title-wrapper">
+                            <h2 class="products__title" title="Choose the car of your dreams">
+                                Choose the car of your dreams
+                            </h2>
+                        </div>
+                        <p class="products__desc" title="We provide our customers with the most incredible driving emotions. 
+                        That is why there are only world-class cars in our fleet">
+                            We provide our customers with the most incredible <span class="products__desc-stage">driving emotions.</span> That is why there are only 
+                            world-class cars in our fleet
+                        </p>
+                    </div>
+                    <div class="products__btn-wrapper js-btn-wrapper">
+                        <button class="products__btn js-compact-btn active-btn" type="button" title="Compact">Compact</button>
+                        <button class="products__btn js-sport-car-btn" type="button" title="Sport cars">Sport cars</button>
+                        <button class="products__btn js-vans-btn" type="button" title="Vans">Vans</button>
+                    </div>
+                    <ul class="products__list js-product-list">
+                        <template class="js-product-temp">
+                            <li class="products__item">
+                                <h3 class="products__item-title" title="">
+                                    
+                                </h3>
+                                <p class="products__item-desc" title="">
+                                    
+                                </p>
+                                <img class="products__img" src="" alt="">
+                                <ul class="products__inner-list">
+                                    <li class="products__inner-item js-seats">
+                                        
+                                    </li>
+                                    <li class="products__inner-item js-transmission">
+                                        
+                                    </li>
+                                    <li class="products__inner-item js-years">
+                                        
+                                    </li>
+                                    <li class="products__inner-item js-consumption">
+                                        
+                                    </li>
+                                </ul>
+                            </li>
+                        </template>
+                    </ul>
+                    <button class="products__view-all-btn js-all-btn" type="button">View all cars</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="./js/data.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>

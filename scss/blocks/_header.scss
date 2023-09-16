@@ -1,0 +1,716 @@
+@use "../mixins" as mx;
+
+.overlay {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    z-index: 10;
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0.2;
+    transition: right 0.3s ease;
+}
+
+.move {
+    right: 0 !important;
+}
+
+.site-header__list {
+    z-index: 10;
+}
+
+.site-header__item:has(.site-header__inner-list) {
+    z-index: 10;
+}
+
+
+@media only screen and (max-width: 375px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .site-header {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1.5px solid var(--main-border-color);
+    }
+
+    .site-header__wrapper {
+        @include mx.flexbox(row, center, space-between);
+    }
+
+    .site-header__inner-wrapper {
+        position: absolute;
+        top: 0;
+        right: -100vw;
+        z-index: 20;
+        @include mx.flexbox(column, flex-start, flex-start);
+        display: none;
+        max-width: 350px;
+        width: 100%;
+        min-height: 844px;
+        height: 100vh;
+        padding-top: 16px;
+        padding-left: 20px;
+        padding-bottom: 40px;
+        background-color: var(--main-body-bg);
+        transition: right 0.3s ease;
+    }
+
+    .inner-header__wrapper {
+        width: 100%;
+        @include mx.flexbox(row, center, space-between);
+        margin-bottom: 36px;
+        padding-right: 16px;
+    }
+
+    .site-header__list {
+        @include mx.flexbox(column, start, center);
+        @include mx.list-unstyled;
+        margin-bottom: 32px;
+    }
+
+    .site-header__item:not(:last-child) {
+        margin-bottom: 32px;
+    }
+
+    .site-header__link {
+        @include mx.typography(inherit, 500, 24px, normal, start, var(--main-text-color));
+        text-decoration: none;
+    }
+
+    .site-header__inner-list {
+        @include mx.flexbox(column, start, center);
+        @include mx.list-unstyled;
+        margin-top: 20px;
+    }
+
+    .site-header__inner-item:not(:last-child) {
+          margin-bottom: 16px;
+    }
+
+    .site-header__inner-link {
+        @include mx.typography(inherit, 500, 24px, normal, start, var(--secondary-text-color));
+        text-decoration: none;
+    }
+
+    .site-header__tel-link {
+        @include mx.typography(inherit, 500, 24px, normal, start, var(--main-text-color));
+        text-decoration: none;
+    }
+
+    .site-header__btn-wrapper {
+        flex-grow: 1;
+        align-self: flex-end;
+        @include mx.flexbox(row, flex-end, center);
+        padding-right: 20px;
+    }
+
+    .site-header__btn-tel-link {
+        display: none;
+    }
+
+    .site-header__mode-btn {
+        width: 58px;
+        height: 58px;
+        margin-right: 16px;
+        background: var(--main-card-bg) url("../images/svg/moon.svg") no-repeat center;
+        background-size: 22px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background-image: url("../images/svg/moon_dark.svg");
+        }
+
+        &:active {
+            background: var(--main-greenish-color) url("../images/svg/moon_white.svg") no-repeat center;
+        }
+    }
+
+    .site-header__login-btn {
+        @include mx.flexbox(row, center, center);
+        min-width: 142px;
+        padding: 18px;
+        @include mx.typography(inherit, 500, 18px, normal, start, var(--tertiary-text-color));
+        background-color: var(--main-greenish-color);
+        border: none;
+        border-radius: 100px;
+        cursor: pointer;
+        transition: background-color 0.3s ease,
+            color 0.3s ease;
+
+        &::after {
+            width: 22px;
+            height: 22px;
+            margin-left: 8px;
+            background-image: url("../images/svg/login.svg");
+            background-position: center;
+            content: "";
+        }
+
+        &:hover {
+            background-color: var(--main-hover-greenish-color);
+        }
+        
+        &:active {
+            color: var(--main-text-color);
+            background-color: var(--main-card-bg);
+        }
+
+        &:active:after {
+            background-image: url("../images/svg/login_dark.svg");
+        }
+    }
+
+    .inner-header__close-btn {
+        width: 48px;
+        height: 48px;
+        background: var(--main-card-bg) url("../images/svg/close.svg") no-repeat center;
+        background-size: 22px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .site-header__menu-btn {
+        padding: 0;
+        width: 40px;
+        height: 20px;
+        background: url("../images/svg/menu.svg") no-repeat center;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+
+
+@media only screen and (min-width: 375px) and (max-width: 768px) {
+
+    
+    .container {
+        padding: 0 16px;
+    }
+
+    .site-header {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1.5px solid var(--main-border-color);
+    }
+
+    .site-header__wrapper {
+        @include mx.flexbox(row, center, space-between);
+    }
+
+    .site-header__inner-wrapper {
+        position: absolute;
+        top: 0;
+        right: -100vw;
+        z-index: 20;
+        @include mx.flexbox(column, flex-start, flex-start);
+        display: none;
+        max-width: 350px;
+        width: 100%;
+        min-height: 844px;
+        height: 100vh;
+        padding-top: 16px;
+        padding-left: 20px;
+        padding-bottom: 40px;
+        background-color: var(--main-body-bg);
+        transition: right 0.3s ease;
+    }
+
+    .inner-header__wrapper {
+        width: 100%;
+        @include mx.flexbox(row, center, space-between);
+        margin-bottom: 36px;
+        padding-right: 16px;
+    }
+
+    .site-header__list {
+        @include mx.flexbox(column, start, center);
+        @include mx.list-unstyled;
+        margin-bottom: 32px;
+    }
+
+    .site-header__item:not(:last-child) {
+        margin-bottom: 32px;
+    }
+
+    .site-header__link {
+        @include mx.typography(inherit, 500, 24px, normal, start, var(--main-text-color));
+        text-decoration: none;
+    }
+
+    .site-header__inner-list {
+        @include mx.flexbox(column, start, center);
+        @include mx.list-unstyled;
+        margin-top: 20px;
+    }
+
+    .site-header__inner-item:not(:last-child) {
+          margin-bottom: 16px;
+    }
+
+    .site-header__inner-link {
+        @include mx.typography(inherit, 500, 24px, normal, start, var(--secondary-text-color));
+        text-decoration: none;
+    }
+
+    .site-header__tel-link {
+        @include mx.typography(inherit, 500, 24px, normal, start, var(--main-text-color));
+        text-decoration: none;
+    }
+
+    .site-header__btn-wrapper {
+        flex-grow: 1;
+        align-self: flex-end;
+        @include mx.flexbox(row, flex-end, center);
+        padding-right: 20px;
+    }
+
+    .site-header__btn-tel-link {
+        display: none;
+    }
+
+    .site-header__mode-btn {
+        width: 58px;
+        height: 58px;
+        margin-right: 16px;
+        background: var(--main-card-bg) url("../images/svg/moon.svg") no-repeat center;
+        background-size: 22px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background-image: url("../images/svg/moon_dark.svg");
+        }
+
+        &:active {
+            background: var(--main-greenish-color) url("../images/svg/moon_white.svg") no-repeat center;
+        }
+    }
+
+    .site-header__login-btn {
+        @include mx.flexbox(row, center, center);
+        min-width: 142px;
+        padding: 18px;
+        @include mx.typography(inherit, 500, 18px, normal, start, var(--tertiary-text-color));
+        background-color: var(--main-greenish-color);
+        border: none;
+        border-radius: 100px;
+        cursor: pointer;
+        transition: background-color 0.3s ease,
+            color 0.3s ease;
+
+        &::after {
+            width: 22px;
+            height: 22px;
+            margin-left: 8px;
+            background-image: url("../images/svg/login.svg");
+            background-position: center;
+            content: "";
+        }
+
+        &:hover {
+            background-color: var(--main-hover-greenish-color);
+        }
+        
+        &:active {
+            color: var(--main-text-color);
+            background-color: var(--main-card-bg);
+        }
+
+        &:active:after {
+            background-image: url("../images/svg/login_dark.svg");
+        }
+    }
+
+    .inner-header__close-btn {
+        width: 48px;
+        height: 48px;
+        background: var(--main-card-bg) url("../images/svg/close.svg") no-repeat center;
+        background-size: 22px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .site-header__menu-btn {
+        padding: 0;
+        width: 40px;
+        height: 20px;
+        background: url("../images/svg/menu.svg") no-repeat center;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1045px) {
+
+    .site-header {
+        padding-top: 27px;
+        padding-bottom: 27px;
+        border-bottom: 1.5px solid var(--main-border-color);
+    }
+
+    .site-header__wrapper {
+        @include mx.flexbox(row, center, space-between);
+    }
+
+    .site-header__inner-wrapper {
+        position: absolute;
+        top: 0;
+        right: -100vw;
+        z-index: 20;
+        @include mx.flexbox(column, flex-start, flex-start);
+        display: none;
+        max-width: 475px;
+        width: 100%;
+        min-height: 844px;
+        height: 100vh;
+        padding-top: 24px;
+        padding-left: 30px;
+        padding-bottom: 40px;
+        background-color: var(--main-body-bg);
+        transition: right 0.3s ease;
+    }
+
+    .inner-header__wrapper {
+        width: 100%;
+        @include mx.flexbox(row, center, space-between);
+        margin-bottom: 78px;
+        padding-right: 24px;
+    }
+
+    .site-header__list {
+        @include mx.flexbox(column, start, center);
+        @include mx.list-unstyled;
+    }
+
+    .site-header__item:not(:last-child) {
+        margin-bottom: 52px;
+    }
+
+    .site-header__link {
+        @include mx.typography(inherit, 500, 28px, normal, start, var(--main-text-color));
+        text-decoration: none;
+    }
+
+    .site-header__inner-list {
+        @include mx.flexbox(column, start, center);
+        @include mx.list-unstyled;
+        margin-top: 20px;
+    }
+
+    .site-header__inner-item:not(:last-child) {
+          margin-bottom: 16px;
+    }
+
+    .site-header__inner-link {
+        @include mx.typography(inherit, 500, 24px, normal, start, var(--secondary-text-color));
+        text-decoration: none;
+    }
+
+    .site-header__tel-link {
+       display: none;
+    }
+
+    .site-header__btn-wrapper {
+        flex-grow: 0;
+        @include mx.flexbox(row, center, center);
+        margin-top: auto;
+        padding-right: 30px;
+    }
+
+    .site-header__btn-tel-link {
+        display: inline-block;
+        margin-right: 51px;
+        @include mx.typography(inherit, 600, 18px, normal, start, var(--secondary-text-color));
+        text-decoration: none;
+    }
+
+    .site-header__mode-btn {
+        width: 58px;
+        height: 58px;
+        margin-right: 16px;
+        background: var(--main-card-bg) url("../images/svg/moon.svg") no-repeat center;
+        background-size: 22px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background-image: url("../images/svg/moon_dark.svg");
+        }
+
+        &:active {
+            background: var(--main-greenish-color) url("../images/svg/moon_white.svg") no-repeat center;
+        }
+    }
+
+    .site-header__login-btn {
+        @include mx.flexbox(row, center, center);
+        min-width: 142px;
+        padding: 18px;
+        @include mx.typography(inherit, 500, 18px, normal, start, var(--tertiary-text-color));
+        background-color: var(--main-greenish-color);
+        border: none;
+        border-radius: 100px;
+        cursor: pointer;
+        transition: background-color 0.3s ease,
+            color 0.3s ease;
+
+        &::after {
+            width: 22px;
+            height: 22px;
+            margin-left: 8px;
+            background-image: url("../images/svg/login.svg");
+            background-position: center;
+            content: "";
+        }
+
+        &:hover {
+            background-color: var(--main-hover-greenish-color);
+        }
+        
+        &:active {
+            color: var(--main-text-color);
+            background-color: var(--main-card-bg);
+        }
+
+        &:active:after {
+            background-image: url("../images/svg/login_dark.svg");
+        }
+    }
+
+    .inner-header__close-btn {
+        width: 58px;
+        height: 58px;
+        background: var(--main-card-bg) url("../images/svg/close.svg") no-repeat center;
+        background-size: 22px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .site-header__menu-btn {
+        padding: 0;
+        width: 40px;
+        height: 20px;
+        background: url("../images/svg/menu.svg") no-repeat center;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+
+@media only screen and (min-width: 1045px) {
+
+    .site-header {
+        padding-top: 18px;
+        padding-bottom: 18px;
+        border-bottom: 1.5px solid var(--main-border-color);
+    }
+
+    .site-header__wrapper {
+        @include mx.flexbox(row, center, flex-start);
+    }
+
+    .header-logo {
+        margin-right: 20px;
+    }
+
+    .site-header__inner-wrapper {
+        @include mx.flexbox(row, center, flex-start);
+        width: 100%;
+    }
+
+    .inner-header__wrapper {
+        display: none;
+    }
+
+    .site-header__list {
+        @include mx.flexbox(row, center, flex-start);
+        @include mx.list-unstyled;
+    }
+
+    .site-header__item {
+        position: relative;
+        @include mx.flexbox(row, center, center);
+        padding: 18px 16px;
+        border-radius: 100px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: var(--main-hover-color);
+        }
+
+        &:hover .site-header__inner-list {
+            display: flex;
+        }
+
+        &:has(.site-header__inner-list) {
+            &::after {
+                width: 22px;
+                height: 22px;
+                margin-left: 8px;
+                background: url("../images/svg/arrdown.svg") no-repeat center;
+                background-size: 22px;
+                transition: transform 0.3s ease;
+                transform-origin: center;
+                content: "";
+                
+            }
+
+            &:hover:after {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+
+    .site-header__link {
+        @include mx.typography(inherit, 500, 18px, normal, start, var(--main-text-color));
+        text-decoration: none;
+    }
+
+    .site-header__inner-list {
+        position: absolute;
+        top: 70px;
+        @include mx.flexbox(column, start, center);
+        display: none;
+        min-width: 147px;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+        list-style: none;
+
+        &::before {
+            position: absolute;
+            top: -12px;
+            width: 100%;
+            height: 14px;
+            background-color: transparent;
+            content: "";
+        }
+    }
+
+    .site-header__inner-item {
+        width: 100%;
+        padding: 18px 0 18px 16px;
+        border-radius: 100px;
+        transition: background-color 0.3s ease,
+            color 0.3s ease; 
+
+        &:hover {
+            background-color: var(--main-hover-color);
+        }
+
+        &:active  {
+            background-color: var(--main-hover-greenish-color);
+        }
+
+        &:active .site-header__inner-link { 
+            color: var(--tertiary-text-color) !important;
+        }
+    }
+    
+    .site-header__inner-list--longer {
+        min-width: 169px;
+    }
+
+
+    .site-header__inner-link {
+        @include mx.typography(inherit, 500, 18px, normal, start, var(--secondary-text-color));
+        text-decoration: none;
+    }
+
+    .site-header__tel-link {
+        margin-left: auto;
+        margin-right: 24px;
+        @include mx.typography(inherit, 600, 18px, normal, start, var(--secondary-text-color));
+        text-decoration: none;
+    }
+
+    .site-header__btn-wrapper {
+        flex-grow: 0;
+        @include mx.flexbox(row, center, center);
+    }
+
+    .site-header__btn-tel-link {
+        display: none;
+    }
+
+    .site-header__mode-btn {
+        width: 58px;
+        height: 58px;
+        margin-right: 16px;
+        background: var(--main-card-bg) url("../images/svg/moon.svg") no-repeat center;
+        background-size: 22px;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background-image: url("../images/svg/moon_dark.svg");
+        }
+
+        &:active {
+            background: var(--main-greenish-color) url("../images/svg/moon_white.svg") no-repeat center;
+        }
+    }
+
+    .site-header__login-btn {
+        @include mx.flexbox(row, center, center);
+        min-width: 142px;
+        padding: 18px;
+        @include mx.typography(inherit, 500, 18px, normal, start, var(--tertiary-text-color));
+        background-color: var(--main-greenish-color);
+        border: none;
+        border-radius: 100px;
+        cursor: pointer;
+        transition: background-color 0.2s ease,
+            color 0.2s ease;
+
+        &::after {
+            width: 22px;
+            height: 22px;
+            margin-left: 8px;
+            background-image: url("../images/svg/login.svg");
+            background-position: center;
+            content: "";
+        }
+
+        &:hover {
+            background-color: var(--main-hover-greenish-color);
+        }
+        
+        &:active {
+            color: var(--main-text-color);
+            background-color: var(--main-card-bg);
+        }
+
+        &:active:after {
+            background-image: url("../images/svg/login_dark.svg");
+        }
+    }
+
+    .inner-header__close-btn {
+       display: none;
+    }
+
+    .site-header__menu-btn {
+        display: none;
+    }
+}
