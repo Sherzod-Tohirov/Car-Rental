@@ -258,6 +258,72 @@ printsProducts(elAllBtn, 'all', true);
 
 
 
+// Testimonials Controllers 
+
+const elTestimonialList = get('js-testimonial-list');
+const elTestimonialItems = Array.from(elTestimonialList.children);
+const elTestimonialPrevBtn = get('js-testimonials-prev-btn');
+const elTestimonialNextBtn = get('js-testimonials-next-btn');
+const elTestimonialBarWrapper = get('js-bar-wrapper');
+const elTestimonialBarValue = get('js-bar-value');
+const elTestimonialItemWidth = elTestimonialItems[0].offsetWidth;
+const barValue = elTestimonialBarValue.offsetWidth;
+
+let activeTestimonialItem = elTestimonialItems.find(item => item.classList.contains('active-testimonial-item'));
+let activeTestimonialItemIndex = elTestimonialItems.findIndex(item => item.classList.contains('active-testimonial-item'));
+let is_first = activeTestimonialItemIndex == 0 ? true : false;
+let is_last = activeTestimonialItemIndex == (elTestimonialItems.length - 1) ? true : false;
+
+elTestimonialPrevBtn.addEventListener('click', (evt) => {
+    if(!is_first) {
+
+        elTestimonialItems[activeTestimonialItemIndex].classList.remove('active-testimonial-item');
+        elTestimonialItems[activeTestimonialItemIndex - 1].classList.add('active-testimonial-item');
+        changeTestimonialView();
+        elTestimonialList.scrollTo({
+            left: activeTestimonialItemIndex  * elTestimonialItemWidth - 20
+        });
+    }
+    elTestimonialBarWrapper.scrollLeft += elTestimonialItemWidth - 20;
+    elTestimonialBarValue.style.width = (activeTestimonialItemIndex + 1) * barValue + "px";
+    
+    changeTestimonialView();
+    
+});
+
+
+elTestimonialNextBtn.addEventListener('click', (evt) => {
+    if(!is_last) {
+        elTestimonialList.scrollTo({
+            left: (activeTestimonialItemIndex + 1) * (elTestimonialItemWidth + 20)
+        });
+
+        elTestimonialItems[activeTestimonialItemIndex].classList.remove('active-testimonial-item');
+        elTestimonialItems[activeTestimonialItemIndex + 1].classList.add('active-testimonial-item');
+        changeTestimonialView();
+        elTestimonialBarWrapper.scrollLeft += elTestimonialItemWidth + 20;
+        if(activeTestimonialItemIndex == elTestimonialItems.length - 1) {
+            elTestimonialBarValue.style.width = '100%';
+        }else {
+            elTestimonialBarValue.style.width = (activeTestimonialItemIndex + 1) * barValue + "px";
+        }
+        
+    }
+    changeTestimonialView();
+    
+});
+
+
+function changeTestimonialView() {
+    
+    activeTestimonialItem = elTestimonialItems.find(item => item.classList.contains('active-testimonial-item'));
+    activeTestimonialItemIndex = elTestimonialItems.findIndex(item => item.classList.contains('active-testimonial-item'));
+    is_first = activeTestimonialItemIndex == 0 ? true : false;
+    is_last = activeTestimonialItemIndex == (elTestimonialItems.length - 1) ? true : false;
+
+
+
+}
 
 
 
