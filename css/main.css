@@ -5159,4 +5159,16 @@ img {
   .security__item-title {
     font-size: 16px;
   }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px), only screen and (min-device-pixel-ratio: 2) and (min-width: 768px), only screen and (min-resolution: 192dpi) and (min-width: 768px), only screen and (min-resolution: 2dppx) and (min-width: 768px) {
+  .security__wrapper {
+    background: var(--main-bg) url("../images/png/securitybgtablet@2x.png") no-repeat calc(50% + 350px) 30px;
+    background-size: 284px 367px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (min-width: 1024px), only screen and (min-resolution: 192dpi) and (min-width: 1024px), only screen and (min-resolution: 2dppx) and (min-width: 1024px) {
+  .security__wrapper {
+    background: var(--main-bg) url("../images/png/securitybg@2x.png") no-repeat calc(50% + 350px) 30px;
+    background-size: 386px 470px;
+  }
 }/*# sourceMappingURL=main.css.map */
