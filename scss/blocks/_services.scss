@@ -1,8 +1,15 @@
 @use "../mixins" as mx;
 
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 350px) {
+    
+    .services__item::after {
+        display: none !important; 
+    }
 
+    .services__item-title {
+        font-size: 18px !important;
+    }
 }
 
 @media only screen and (min-width: 0) {

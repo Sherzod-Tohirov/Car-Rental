@@ -484,7 +484,7 @@ $i: 1;
     }
 
     .products__list {
-        @include mx.flexbox(row, center, flex-start);
+        @include mx.flexbox(row, center, center);
         flex-wrap: wrap;
         gap: 20px;
         width: 100%;
@@ -499,6 +499,10 @@ $i: 1;
         padding: 30px 24px;
         background-color: var(--main-card-bg);
         border-radius: 16px;
+
+        &:last-child {
+            margin-right: auto;
+        }
     }
 
     .products__item-title {
