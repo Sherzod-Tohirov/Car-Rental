@@ -325,6 +325,31 @@ function changeTestimonialView() {
 }
 
 
+// Scroll top button 
+
+const elScrollBtn = get('js-scroll-btn');
+
+document.addEventListener('scroll', (evt) => {
+    let scrollVal = Math.round(document.documentElement.scrollTop);
+    let windowHeight = Math.round(window.innerHeight);
+
+    if(scrollVal > windowHeight) {
+        elScrollBtn.style.display = 'block';
+        setTimeout(() => {
+            elScrollBtn.style.opacity = 1;
+        }, 0);
+    }else {
+        elScrollBtn.style.opacity = 0;
+        setTimeout(() => {
+            elScrollBtn.style.display = 'none';
+        }, 300);
+    }
+}); 
+
+elScrollBtn.addEventListener('click', (evt) => {
+    document.documentElement.scrollTop = 0;
+});
+
 
 
 

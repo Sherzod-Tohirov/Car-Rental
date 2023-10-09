@@ -392,6 +392,41 @@ img {
           flex-grow: 1;
 }
 
+@media only screen and (min-width: 0) {
+  .scroll-top-btn {
+    position: fixed;
+    right: 16px;
+    bottom: 32px;
+    display: none;
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    background: var(--main-greenish-color) url("../images/svg/arrup.svg") no-repeat center;
+    cursor: pointer;
+    opacity: 0;
+    -webkit-transition: background-color 0.2s ease, opacity 0.3s ease;
+    transition: background-color 0.2s ease, opacity 0.3s ease;
+  }
+  .scroll-top-btn:hover {
+    background-color: var(--main-hover-greenish-color);
+  }
+  .scroll-top-btn:active {
+    background: #f5f5f5 url("../images/svg/arrup-black.svg") no-repeat center;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .scroll-top-btn {
+    right: 20px;
+    bottom: 42px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .scroll-top-btn {
+    right: 120px;
+    bottom: 40px;
+  }
+}
 /*Visually hidden class */
 .visually-hidden {
   position: absolute;
