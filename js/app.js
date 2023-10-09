@@ -135,7 +135,6 @@ function changeItemView() {
         let currentSlideInd = slides.findIndex(item => {
         return item.classList.contains('active-slide');
         });
-        console.log(currentSlideInd);
         views.forEach((item, index) => {
             if(index != currentSlideInd) {
             item.classList.remove('active-slider-item');

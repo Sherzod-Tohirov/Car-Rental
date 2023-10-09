@@ -1,0 +1,261 @@
+@use "../mixins" as mx;
+
+@media only screen and (min-width: 0) {
+    .site-footer {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-top: 1.5px solid var(--main-border-color);
+        background-color: var(--main-body-bg);
+    }
+
+    .site-footer .logo__img {
+        width: 100px;
+        height: 28px;
+    }
+
+    .site-footer__wrapper {
+        @include mx.flexbox(column, flex-start, flex-start);
+        gap: 24px;
+        width: 100%;
+    }
+
+    .site-footer__start-wrapper {
+        @include mx.flexbox(row, center, space-between);
+        row-gap: 20px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .s-footer-details-wrapper {
+        @include mx.flexbox(column, flex-start, flex-start);
+        gap: 16px;
+        max-width: 199px;
+    }
+
+    .s-footer__desc {
+        @include mx.typography(inherit, 400, 10px, 160%, start, var(--secondary-text-color));
+        @include mx.remove-margin;
+    }
+
+    .copyright {
+        max-width: 138px;
+        @include mx.typography(inherit, 500, 14px, 157%, start, var(--main-text-color));
+    }
+
+    .site-footer__end-wrapper {
+        @include mx.flexbox(column, flex-start, flex-start);
+    }
+
+    .e-footer__start-wrapper {
+        @include mx.flexbox(row, flex-start, flex-start);
+        padding-bottom: 32px;
+        border-bottom: 1.5px solid var(--main-border-color);
+    }
+
+    .site-footer__lists-wrapper {
+        @include mx.flexbox(row, flex-start, flex-start);
+        flex-wrap: wrap;
+        gap: 40px 71px;
+    }
+
+    .site-footer__list-wrapper {
+        @include mx.flexbox(column, flex-start, flex-start);
+
+        &:nth-child(3) {
+            margin-right: auto;
+        }
+    }
+    
+    .site-footer__list-title {
+        margin-bottom: 16px;
+        @include mx.typography(inherit, 500, 16px, normal, start, var(--main-text-color));
+        font-style: normal;
+    }
+
+    .site-footer__list {
+        @include mx.flexbox(column, flex-start, flex-start);
+        gap: 12px;
+        @include mx.list-unstyled;
+    }
+
+    .site-footer__link {
+        @include mx.typography(inherit, 500, 14px, normal, start, var(--secondary-text-color));
+        font-style: normal;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: var(--main-text-color);
+            text-decoration: underline;
+        }
+    }
+
+    .e-footer__end-wrapper {
+        width: 100%;
+        padding-top: 32px;
+    }
+
+    .site-footer__end-lists-wrapper {
+        @include mx.flexbox(row, flex-start, flex-start);
+        flex-wrap: wrap;
+        gap: 40px 10px;
+    }
+
+    .site-footer__item {
+        @include mx.typography(inherit, 500, 14px, normal, start, var(--secondary-text-color));
+    }
+
+    .social-list-title {
+        margin-bottom: 22px;
+    }
+
+    .site-footer__social-list {
+        @include mx.list-unstyled;
+        @include mx.flexbox(row, flex-start, flex-start);
+        gap: 15px;
+    }
+
+    .site-footer__social-item  {
+        @include mx.flexbox(row, center, center);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #000;
+
+        &:first-child:hover {
+            background-image: radial-gradient(230.93% 230.93% at 102.01% 2.03%, #F9ED32 0%, #EE2A7B 36%, #D22A8A 44%, #8B2AB2 60%, #1B2AF0 83%, #002AFF 88%);
+        }
+
+        &:nth-child(2):hover {
+            background-color: #55ace3;
+        }
+
+        &:nth-child(3):hover {
+            background-color: #0b84ee;
+        }
+
+        &:nth-child(4):hover {
+            background-color: #48c95f;
+        }
+
+        &:nth-child(4):hover .site-footer__social-img {
+            content: url("../images/svg/whatsapp-clr.svg");
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .site-footer {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .site-footer .logo__img {
+        width: 150px;
+        height: 40px;
+    }
+
+    .site-footer__wrapper {
+        gap: 30px;
+    }
+
+    .site-footer__start-wrapper {
+        @include mx.flexbox(row, center, space-between);
+        row-gap: 20px;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .s-footer-details-wrapper {
+        @include mx.flexbox(column, flex-start, flex-start);
+        gap: 16px;
+        max-width: 240px;
+    }
+
+    .s-footer__desc {
+        @include mx.typography(inherit, 400, 12px, 20px, start, var(--secondary-text-color));
+        @include mx.remove-margin;
+    }
+
+    .copyright {
+        max-width: 158px;
+        @include mx.typography(inherit, 500, 16px, 24px, start, var(--main-text-color));
+    }
+
+    .site-footer__end-wrapper {
+        width: 100%;
+    }
+
+    .e-footer__start-wrapper {
+        width: 100%;
+        padding-bottom: 40px;
+    }
+
+    .site-footer__lists-wrapper {
+        @include mx.flexbox(row, flex-start, space-between);
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .site-footer__list-wrapper {
+        &:nth-child(3) {
+            margin-right: 0;
+        }
+    }
+
+    
+    .e-footer__end-wrapper {
+        padding-top: 40px;
+    }
+
+    .site-footer__end-lists-wrapper {
+        gap: 0;
+    }
+
+    .site-footer__end-lists-wrapper .site-footer__list-wrapper {
+        &:first-child {
+            margin-right: 49px;
+        }
+
+        &:nth-child(2) {
+            margin-right: 46px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .site-footer {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .site-footer__wrapper {
+        @include mx.flexbox(row, flex-start, space-between);
+        column-gap: 65px;
+    }
+
+    .site-footer__start-wrapper {
+        @include mx.flexbox(column, flex-start, flex-start);
+        row-gap: 84px;
+        max-width: 240px;
+        margin-right: auto;
+    }
+
+    .site-footer__end-wrapper {
+        padding-top: 24px;
+    }
+
+    .site-footer__lists-wrapper {
+        flex-wrap: nowrap;
+    }
+
+    .site-footer__end-lists-wrapper .site-footer__list-wrapper {
+
+        &:nth-child(2) {
+            margin-right: 52px;
+        }
+    }
+
+
+}
