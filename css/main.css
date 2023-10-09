@@ -3212,9 +3212,6 @@ img {
     background-color: var(--main-card-bg);
     border-radius: 16px;
   }
-  .products__item:last-child {
-    margin-right: auto;
-  }
   .products__item-title {
     margin-top: 0;
     margin-bottom: 8px;
@@ -3260,6 +3257,11 @@ img {
   }
   .products__view-all-btn:hover {
     background-color: var(--main-hover-greenish-color);
+  }
+}
+@media only screen and (min-width: 1400px) {
+  .products__item:last-child {
+    margin-right: auto;
   }
 }
 .testimonials__list {

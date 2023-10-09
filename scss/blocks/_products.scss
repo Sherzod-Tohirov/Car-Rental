@@ -500,9 +500,6 @@ $i: 1;
         background-color: var(--main-card-bg);
         border-radius: 16px;
 
-        &:last-child {
-            margin-right: auto;
-        }
     }
 
     .products__item-title {
@@ -539,4 +536,10 @@ $i: 1;
         }
     }
     
+}
+
+@media only screen and (min-width: 1400px) {
+    .products__item:last-child {
+        margin-right: auto;
+    }
 }
