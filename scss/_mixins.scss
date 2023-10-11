@@ -50,3 +50,13 @@
     opacity: 0.5;
     pointer-events: all;
 }
+
+
+
+// Responsive design 
+
+@mixin mobile-first($min) {
+	@media only screen and (min-width: #{$min}) {
+		@content
+	}
+}

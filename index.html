@@ -78,7 +78,7 @@
                             +1 855 420 0000
                         </a>
                         <button class="site-header__mode-btn" type="button"></button>
-                        <button class="site-header__login-btn" type="button">Login</button>
+                        <button class="site-header__login-btn js-login-btn" type="button">Login</button>
                     </div>
                 </div>
                 <button class="site-header__menu-btn js-menu-btn"></button>
@@ -477,6 +477,40 @@
             </div>
         </section>
         <button class="scroll-top-btn js-scroll-btn"></button>
+        <div class="overlay-auth js-auth-overlay"></div>
+        <div class="auth login js-login">
+            <div class="container">
+                <div class="auth__wrapper">
+                    <button class="auth__close-btn js-auth-close-btn" type="button"></button>
+                    <div class="auth__details-wrapper">
+                        <h2 class="auth__title" title="Login">Login</h2>
+                        <p class="auth__desc" title="Use the email and password that you login">
+                            Use the email and password that you login
+                        </p>
+                    </div>
+                    <form id="auth-form" class="auth__form js-login-form">
+                        <div class="auth__input-group">
+                            <input class="auth__input js-email-input" type="email" name="user_email" placeholder="Email" aria-label="Enter your email">
+                            <span class="auth__error-msg js-email-error"></span>
+                        </div>
+                        <div class="auth__input-group">
+                            <div class="auth__input-wrapper">
+                                <input class="auth__input js-password-input" type="password" name="user_password" placeholder="Password" aria-label="Enter your password">
+                                <span class="auth__input-icon eye-icon js-eye-icon"></span>
+                            </div>
+                            <span class="auth__error-msg js-password-error"></span>
+                        </div>
+                        <a class="auth__reset-password-link" href="#">
+                            Forgot password
+                        </a>
+                    </form>
+                    <a class="auth__link" href="#">
+                        I want to create an account
+                    </a>
+                    <button class="auth__btn" type="submit" form="auth-form">Login</button>
+                </div>
+            </div>
+        </div>
     </main>
     <footer class="site-footer">
         <div class="container">
@@ -657,5 +691,6 @@
     </footer>
     <script src="./js/data.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/auth.js"></script>
 </body>
 </html>

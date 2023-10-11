@@ -1,0 +1,233 @@
+@use "../mixins" as mx;
+
+
+@include mx.mobile-first(0) {
+    .auth {
+        position: fixed;
+        z-index: 15;
+        top: 50%;
+        left: 50%;
+        transform:translate(-50%, -50%) scale(0);
+        max-width: 358px;
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 16px;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.10);
+        transition: transform 0.3s ease;
+    }
+
+    .auth-appear {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .auth__wrapper {
+        @include mx.flexbox(column, center, center);
+    }
+
+    .auth__close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 48px;
+        height: 48px;
+        border: none;
+        border-radius: 50%;
+        background: #f5f5f5 url("../images/svg/close.svg") no-repeat center;
+        cursor: pointer;
+    }
+
+    .auth__details-wrapper {
+        @include mx.flexbox(column, center, center);
+        gap: 6px;
+        margin-bottom: 40px;
+    }
+
+    .auth__title {
+        @include mx.remove-margin;
+        @include mx.typography(inherit, 600, 24px, normal, center, var(--main-text-color));
+    }
+
+    .auth__desc {
+        @include mx.remove-margin;
+        @include mx.typography(inherit, 400, 12px, normal, center, var(--secondary-text-color));
+    }
+
+    .auth__form {
+        @include mx.flexbox(column, center, center);
+        width: 100%;
+        margin-bottom: 32px;
+    }
+
+    .auth__input-group {
+        position: relative;
+        @include mx.flexbox(column, flex-start, flex-start);
+        gap: 8px;
+        width: 100%;
+
+        &:first-child {
+            margin-bottom: 16px;
+        }
+
+        &:nth-child(2) {
+            margin-bottom: 8px;
+        }
+    }
+
+    .auth__input-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    .auth__input {
+        width: 100%;
+        padding: 18px 30px;
+        padding-right: 40px;
+        @include mx.typography(inherit, 500, 18px, normal, start, var(--main-text-color));
+        border-radius: 82px;
+        border: 1.5px solid var(--main-border-color);
+        background-color: #fff;
+
+        &::placeholder {
+            @include mx.typography(inherit, 500, 18px, normal, start, var(--secondary-text-color));
+        }
+    }
+
+    .auth__input-icon {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-46%);
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+    }
+
+    .auth__error-msg {
+        margin-left: 5px;
+        @include mx.typography(inherit, 500, 14px, normal, start, var(--main-err-color));
+    }
+
+    .eye-icon {
+        background: url("../images/svg/eye.svg") no-repeat center;
+    }
+
+    .eye-closed {
+        background: url("../images/svg/eyeclosed.svg") no-repeat center !important;
+    }
+
+    .auth__reset-password-link {
+        align-self: flex-start;
+        margin-left: 8px;
+        @include mx.typography(inherit, 500, 14px, normal, center, var(--secondary-text-color));
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .auth__link {
+        margin-bottom: 46px;
+        @include mx.typography(inherit, 500, 16px, normal, center, var(--main-text-color));
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .auth__btn {
+        @include mx.flexbox(row, center, center);
+        gap: 8px;
+        width: 100%;
+        padding: 18px 30px;
+        border: none;
+        border-radius: 100px;
+        background-color: var(--main-greenish-color);
+        @include mx.typography(inherit, 500, 18px, normal, center, var(--tertiary-text-color));
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: var(--main-hover-greenish-color);
+        }
+
+        &:active {
+            background-color: #f5f5f5;
+            color: #000;
+        }
+
+        &:active:after {
+            background: url("../images/svg/login-black.svg") no-repeat center;
+        }
+        
+        &::after {
+            width: 22px;
+            height: 22px;
+            background: url("../images/svg/login.svg") no-repeat center;
+            content: "";
+        }
+    }
+
+    .invalid-input {
+        border-color: #ff3b30;
+    }
+
+    .valid-input {
+        border-color: #299764;
+    }
+
+}
+
+@include mx.mobile-first(768px) {
+    .auth {
+        max-width: 590px;
+        padding: 40px 12px;
+    }
+
+    .auth__close-btn {
+        top: 24px;
+        right: 24px;
+        width: 58px;
+        height: 58px;
+    }
+
+    .auth__details-wrapper {
+        gap: 10px;
+        margin-bottom: 32px;
+    }
+
+    .auth__title {
+        font-size: 36px;
+    }
+
+    .auth__desc {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .auth__form {
+        margin-bottom: 26px;
+    }
+
+    .auth__input {
+        padding: 18px 30px;
+        padding-right: 55px;
+    }
+
+    .auth__input-icon {
+        right: 30px;
+    }
+
+    .auth__reset-password-link {
+        align-self: flex-end;
+        margin-left: 0;
+    }
+
+    .auth__link {
+        margin-bottom: 32px;
+    }
+}
