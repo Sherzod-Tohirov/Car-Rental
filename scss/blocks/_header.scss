@@ -26,6 +26,11 @@
 }
 
 
+.dark-mode-btn {
+    background: var(--main-card-bg) url("../images/svg/sun.svg") no-repeat center !important;
+}
+
+
 @media only screen and (max-width: 375px) {
     .container {
         padding: 0 16px;
@@ -121,7 +126,6 @@
         border: none;
         border-radius: 50%;
         cursor: pointer;
-        transition: background 0.3s ease;
 
         &:hover {
             background-image: url("../images/svg/moon_dark.svg");
@@ -514,6 +518,13 @@
 
 
 @media only screen and (min-width: 1045px) {
+    .site-header__inner-list { 
+        background-color: var(--main-inner-list-bg) !important;
+    }
+    
+    .site-header__inner-list .site-header__inner-item:hover {
+        background-color: var(--main-inner-list-hover-bg);
+    }
 
     .site-header {
         padding-top: 18px;

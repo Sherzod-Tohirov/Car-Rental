@@ -1,3 +1,12 @@
+// Handle dark mode 
+
+if(localStorage.getItem("dark")) {
+    document.body.classList.add('dark');
+}
+
+
+
+
 // Close and Menu 
 
 const elMenuBtn = get('js-menu-btn');
@@ -6,51 +15,16 @@ const elInnerHeader = get('js-inner-header');
 const elOverlay = get('js-overlay');
 let switched = false;
 
+// Add and remove sidebar 
 
-elMenuBtn.addEventListener('click', (evt) => {
-    switched = true;
-    elOverlay.style.display = 'block';    
-    setTimeout(() => {
-        elOverlay.classList.add('move');
-    }, 0);
-    setTimeout(() => {
-        elInnerHeader.style.display = 'flex';
-    }, 100);
-    setTimeout(() => {
-        elInnerHeader.classList.add('move'); 
-    }, 150);
-});
+elMenuBtn.addEventListener('click', addSideBar);
+
+elCloseBtn.addEventListener('click', removeSideBar);
 
 
-elCloseBtn.addEventListener('click', (evt) => {
-    switched = false;
-    elInnerHeader.classList.remove('move');
-    elOverlay.classList.remove('move');
-    setTimeout(() => {
-        elInnerHeader.style.display = 'none';
-        elOverlay.style.display = 'none';   
-    }, 300); 
-});
+// Control sidebar if window size changes 
 
-
-
-window.addEventListener('resize', (evt) => { 
-
-   if(window.matchMedia('(min-width: 1045px)').matches) {
-    elInnerHeader.style.display = 'flex';    
-    elOverlay.style.display = 'none'; 
-   }
-
-   if(!window.matchMedia('(min-width: 1045px)').matches && switched) {
-        elOverlay.style.display = 'block'; 
-   }
-
-   if(!window.matchMedia('(min-width: 1045px)').matches && !switched) {
-        elInnerHeader.style.display = 'none';    
-        elOverlay.style.display = 'none'; 
-   }
-
-});
+window.addEventListener('resize', controlSideBar);
 
 
 // Slider controllers 
@@ -353,6 +327,112 @@ elScrollBtn.addEventListener('click', (evt) => {
 
 
 
+// Handle sidebar nav when login clicks moble mode
+
+
+window.addEventListener('resize', () => observeLoginBtn());
 
 
 
+// Control mode 
+
+
+const elModeBtn = get('js-mode-btn');
+
+
+elModeBtn.addEventListener('click', (evt) => {
+    elModeBtn.classList.toggle('dark-mode-btn');
+    document.body.classList.contains('dark') ? document.body.classList.remove('dark') : document.body.classList.add('dark');
+
+    if(document.body.classList.contains("dark")) {
+        localStorage.setItem("dark", true);
+    }else {
+        localStorage.removeItem("dark");
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function observeLoginBtn() {
+    if(matchMedia('(max-width: 1024px)').matches) {
+        const elLoginBtn = get('js-login-btn');
+        elLoginBtn.addEventListener('click', removeSideBar);
+    }
+
+    if(matchMedia('(min-width: 1024px)').matches) {
+        elInnerHeader.style.display = 'flex';    
+        elOverlay.style.display = 'none'; 
+        elLoginBtn.removeEventListener('click', removeSideBar);
+    }
+}
+
+
+
+function removeSideBar() {
+    switched = false;
+    elInnerHeader.classList.remove('move');
+    elOverlay.classList.remove('move');
+    setTimeout(() => {
+        elInnerHeader.style.display = 'none';
+        elOverlay.style.display = 'none'; 
+    }, 300);  
+}
+
+function addSideBar() {
+    switched = true;
+    elOverlay.style.display = 'block';    
+    setTimeout(() => {
+        elOverlay.classList.add('move');
+    }, 0);
+    setTimeout(() => {
+        elInnerHeader.style.display = 'flex';
+    }, 100);
+    setTimeout(() => {
+        elInnerHeader.classList.add('move'); 
+    }, 150);
+}
+
+
+function controlSideBar() {
+
+    if(window.matchMedia('(min-width: 1045px)').matches) {
+        elInnerHeader.style.display = 'flex';    
+        elOverlay.style.display = 'none'; 
+       }
+    
+       if(!window.matchMedia('(min-width: 1045px)').matches && switched) {
+            elOverlay.style.display = 'block'; 
+       }
+    
+       if(!window.matchMedia('(min-width: 1045px)').matches && !switched) {
+            elInnerHeader.style.display = 'none';    
+            elOverlay.style.display = 'none'; 
+       }
+}

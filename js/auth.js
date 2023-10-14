@@ -12,8 +12,17 @@ const elEmailError = get('js-email-error');
 const elPasswordError = get('js-password-error');
 
 elLoginBtn.addEventListener('click', (evt) => {
-    elAuthOverlay.classList.add('appear');
-    elLogin.classList.add('auth-appear');
+    if(matchMedia('(min-width: 0)').matches && matchMedia('(max-width: 1024px)').matches) {
+        setTimeout(() => {
+            elAuthOverlay.classList.add('appear');
+            elLogin.classList.add('auth-appear');
+        }, 400);
+    }else {
+        elAuthOverlay.classList.add('appear');
+        elLogin.classList.add('auth-appear');
+    }
+    
+
 });
 
 elAuthCloseBtn.addEventListener('click', (evt) => {

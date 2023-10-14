@@ -348,6 +348,8 @@ template {
   --tertiary-text-color: #fff;
   --main-border-color: #e5e7ea;
   --main-bluish-color: #4285f4;
+  --main-inner-list-bg: #fff;
+  --main-inner-list-hover-bg: #299764;
   --main-err-color: #FF3B30;
 }
 
@@ -433,6 +435,21 @@ img {
   display: block;
 }
 
+.dark {
+  --main-bg: #1c1c1c;
+  --main-body-bg: #1c1c1c;
+  --main-card-bg: #272727;
+  --main-hover-color: #272727;
+  --main-text-color: #fff;
+  --secondary-text-color: #fff;
+  --tertiary-text-color: #fff;
+  --main-inner-list-bg: #272727;
+  --main-inner-list-hover-bg: #333;
+  --main-border-color: #333;
+  --main-bluish-color: #4285f4;
+  --main-err-color: #FF3B30;
+}
+
 @media only screen and (min-width: 768px) {
   .scroll-top-btn {
     right: 20px;
@@ -488,6 +505,10 @@ img {
 
 .site-header__item:has(.site-header__inner-list) {
   z-index: 10;
+}
+
+.dark-mode-btn {
+  background: var(--main-card-bg) url("../images/svg/sun.svg") no-repeat center !important;
 }
 
 @media only screen and (max-width: 375px) {
@@ -668,8 +689,6 @@ img {
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    -webkit-transition: background 0.3s ease;
-    transition: background 0.3s ease;
   }
   .site-header__mode-btn:hover {
     background-image: url("../images/svg/moon_dark.svg");
@@ -1244,6 +1263,12 @@ img {
   }
 }
 @media only screen and (min-width: 1045px) {
+  .site-header__inner-list {
+    background-color: var(--main-inner-list-bg) !important;
+  }
+  .site-header__inner-list .site-header__inner-item:hover {
+    background-color: var(--main-inner-list-hover-bg);
+  }
   .site-header {
     padding-top: 18px;
     padding-bottom: 18px;
@@ -1728,7 +1753,7 @@ img {
     font-size: 14px;
     line-height: normal;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
     border: 1px solid transparent;
     border-radius: 100px;
     background-color: #fff;
@@ -1741,7 +1766,7 @@ img {
     font-size: 12px;
     line-height: normal;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__input::-moz-placeholder {
     font-family: inherit;
@@ -1749,7 +1774,7 @@ img {
     font-size: 12px;
     line-height: normal;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__input:-ms-input-placeholder {
     font-family: inherit;
@@ -1757,7 +1782,7 @@ img {
     font-size: 12px;
     line-height: normal;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__input::-ms-input-placeholder {
     font-family: inherit;
@@ -1765,7 +1790,7 @@ img {
     font-size: 12px;
     line-height: normal;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__input::placeholder {
     font-family: inherit;
@@ -1773,7 +1798,7 @@ img {
     font-size: 12px;
     line-height: normal;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__form-btn {
     position: absolute;
@@ -1892,7 +1917,7 @@ img {
     font-size: 16px;
     line-height: normal;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
     border: 1px solid transparent;
     border-radius: 100px;
     background-color: #fff;
@@ -1905,7 +1930,7 @@ img {
     font-size: 16px;
     line-height: normal;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__input::-moz-placeholder {
     font-family: inherit;
@@ -1913,7 +1938,7 @@ img {
     font-size: 16px;
     line-height: normal;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__input:-ms-input-placeholder {
     font-family: inherit;
@@ -1921,7 +1946,7 @@ img {
     font-size: 16px;
     line-height: normal;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__input::-ms-input-placeholder {
     font-family: inherit;
@@ -1929,7 +1954,7 @@ img {
     font-size: 16px;
     line-height: normal;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__input::placeholder {
     font-family: inherit;
@@ -1937,7 +1962,7 @@ img {
     font-size: 16px;
     line-height: normal;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__form-btn {
     position: absolute;
@@ -2103,7 +2128,7 @@ img {
     font-size: 18px;
     line-height: 22px;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
     border: none;
     border-radius: 100px;
     background-color: #fff;
@@ -2116,7 +2141,7 @@ img {
     font-size: 18px;
     line-height: 22px;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__input::-moz-placeholder {
     font-family: inherit;
@@ -2124,7 +2149,7 @@ img {
     font-size: 18px;
     line-height: 22px;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__input:-ms-input-placeholder {
     font-family: inherit;
@@ -2132,7 +2157,7 @@ img {
     font-size: 18px;
     line-height: 22px;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__input::-ms-input-placeholder {
     font-family: inherit;
@@ -2140,7 +2165,7 @@ img {
     font-size: 18px;
     line-height: 22px;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__input::placeholder {
     font-family: inherit;
@@ -2148,7 +2173,7 @@ img {
     font-size: 18px;
     line-height: 22px;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__form-btn {
     position: absolute;
@@ -2323,7 +2348,7 @@ img {
     font-size: 18px;
     line-height: 22px;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
     border: none;
     border-radius: 100px;
     background-color: #fff;
@@ -2336,7 +2361,7 @@ img {
     font-size: 18px;
     line-height: 22px;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__input::-moz-placeholder {
     font-family: inherit;
@@ -2344,7 +2369,7 @@ img {
     font-size: 18px;
     line-height: 22px;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__input:-ms-input-placeholder {
     font-family: inherit;
@@ -2352,7 +2377,7 @@ img {
     font-size: 18px;
     line-height: 22px;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__input::-ms-input-placeholder {
     font-family: inherit;
@@ -2360,7 +2385,7 @@ img {
     font-size: 18px;
     line-height: 22px;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__input::placeholder {
     font-family: inherit;
@@ -2368,7 +2393,7 @@ img {
     font-size: 18px;
     line-height: 22px;
     text-align: start;
-    color: var(--secondary-text-color);
+    color: #555;
   }
   .hero__form-btn {
     position: absolute;
@@ -5240,7 +5265,7 @@ img {
     width: 100%;
     padding-top: 50px;
     padding-bottom: 16px;
-    background-color: #fff;
+    background-color: var(--main-bg);
     border-radius: 20px;
     -webkit-box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.1);
             box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.1);
@@ -5277,7 +5302,7 @@ img {
     height: 48px;
     border: none;
     border-radius: 50%;
-    background: #f5f5f5 url("../images/svg/close.svg") no-repeat center;
+    background: var(--main-card-bg) url("../images/svg/close.svg") no-repeat center;
     cursor: pointer;
   }
   .auth__details-wrapper {
@@ -5374,7 +5399,7 @@ img {
     color: var(--main-text-color);
     border-radius: 82px;
     border: 1.5px solid var(--main-border-color);
-    background-color: #fff;
+    background-color: var(--main-card-bg);
   }
   .auth__input::-webkit-input-placeholder {
     font-family: inherit;

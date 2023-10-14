@@ -120,13 +120,13 @@
     width: 100%;
     padding: 16px;
     padding-right: 50px;
-    @include mx.typography(inherit, 500, 14px, normal, start, var(--secondary-text-color));
+    @include mx.typography(inherit, 500, 14px, normal, start, #555);
     border: 1px solid transparent;
     border-radius: 100px;
     background-color: #fff;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
     &::placeholder {
-     @include mx.typography(inherit, 500, 12px, normal, start, var(--secondary-text-color));
+     @include mx.typography(inherit, 500, 12px, normal, start, #555);
     }
   }
 
@@ -202,13 +202,13 @@
     width: 100%;
     padding: 20px;
     padding-right: 60px;
-    @include mx.typography(inherit, 500, 16px, normal, start, var(--secondary-text-color));
+    @include mx.typography(inherit, 500, 16px, normal, start, #555);
     border: 1px solid transparent;
     border-radius: 100px;
     background-color: #fff;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
     &::placeholder {
-     @include mx.typography(inherit, 500, 16px, normal, start, var(--secondary-text-color));
+     @include mx.typography(inherit, 500, 16px, normal, start, #555);
     }
   }
 
@@ -314,13 +314,13 @@
     width: 100%;
     padding: 22px;
     padding-right: 65px;
-    @include mx.typography(inherit, 500, 18px, 22px, start, var(--secondary-text-color));
+    @include mx.typography(inherit, 500, 18px, 22px, start, #555);
     border: none;
     border-radius: 100px;
     background-color: #fff;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
     &::placeholder {
-     @include mx.typography(inherit, 500, 18px, 22px, start, var(--secondary-text-color));
+     @include mx.typography(inherit, 500, 18px, 22px, start, #555);
     }
   }
 
@@ -437,13 +437,13 @@
     width: 100%;
     padding: 22px;
     padding-right: 65px;
-    @include mx.typography(inherit, 500, 18px, 22px, start, var(--secondary-text-color));
+    @include mx.typography(inherit, 500, 18px, 22px, start, #555);
     border: none;
     border-radius: 100px;
     background-color: #fff;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
     &::placeholder {
-     @include mx.typography(inherit, 500, 18px, 22px, start, var(--secondary-text-color));
+     @include mx.typography(inherit, 500, 18px, 22px, start, #555);
     }
   }
 

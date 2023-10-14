@@ -85,6 +85,21 @@ img {
   display: block;
 }
 
+.dark {
+  --main-bg: #1c1c1c;
+  --main-body-bg: #1c1c1c;
+  --main-card-bg: #272727;
+  --main-hover-color: #272727;
+  --main-text-color: #fff;
+  --secondary-text-color: #fff;
+  --tertiary-text-color: #fff;
+  --main-inner-list-bg: #272727;
+  --main-inner-list-hover-bg: #333;
+  --main-border-color: #333;
+  --main-bluish-color: #4285f4;
+  --main-err-color: #FF3B30;
+}
+
 
 @media only screen and (min-width: 768px) {
   .scroll-top-btn {

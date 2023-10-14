@@ -12,7 +12,7 @@
         width: 100%;
         padding-top: 50px;
         padding-bottom: 16px;
-        background-color: #fff;
+        background-color: var(--main-bg);
         border-radius: 20px;
         box-shadow: 0px 0px 100px 0px rgba(0, 0, 0, 0.10);
         transition: transform 0.3s ease;
@@ -34,7 +34,7 @@
         height: 48px;
         border: none;
         border-radius: 50%;
-        background: #f5f5f5 url("../images/svg/close.svg") no-repeat center;
+        background: var(--main-card-bg) url("../images/svg/close.svg") no-repeat center;
         cursor: pointer;
     }
 
@@ -87,7 +87,7 @@
         @include mx.typography(inherit, 500, 18px, normal, start, var(--main-text-color));
         border-radius: 82px;
         border: 1.5px solid var(--main-border-color);
-        background-color: #fff;
+        background-color: var(--main-card-bg);
 
         &::placeholder {
             @include mx.typography(inherit, 500, 18px, normal, start, var(--secondary-text-color));
