@@ -1,10 +1,9 @@
+const elModeBtn = get('js-mode-btn');
+
 // Handle dark mode 
 
-if(localStorage.getItem("dark")) {
-    document.body.classList.add('dark');
-}
-
-
+if(checkDarkMode()) enableDarkMode();
+else enableDarkMode(false);
 
 
 // Close and Menu 
@@ -25,7 +24,6 @@ elCloseBtn.addEventListener('click', removeSideBar);
 // Control sidebar if window size changes 
 
 window.addEventListener('resize', controlSideBar);
-
 
 // Slider controllers 
 
@@ -185,6 +183,8 @@ function printsProducts(btn, type, isAll = false) {
             elBtns.forEach(btn => btn.classList.remove('active-btn'));
             btn.style.display = 'none';
         }
+
+        if(checkDarkMode()) enableDarkMode();
     });   
     
    
@@ -293,8 +293,7 @@ function changeTestimonialView() {
     activeTestimonialItemIndex = elTestimonialItems.findIndex(item => item.classList.contains('active-testimonial-item'));
     is_first = activeTestimonialItemIndex == 0 ? true : false;
     is_last = activeTestimonialItemIndex == (elTestimonialItems.length - 1) ? true : false;
-
-
+    
 
 }
 
@@ -336,19 +335,16 @@ window.addEventListener('resize', () => observeLoginBtn());
 
 // Control mode 
 
-
-const elModeBtn = get('js-mode-btn');
-
-
 elModeBtn.addEventListener('click', (evt) => {
-    elModeBtn.classList.toggle('dark-mode-btn');
-    document.body.classList.contains('dark') ? document.body.classList.remove('dark') : document.body.classList.add('dark');
-
-    if(document.body.classList.contains("dark")) {
+    if(!checkDarkMode()) {
         localStorage.setItem("dark", true);
+        enableDarkMode();
     }else {
         localStorage.removeItem("dark");
+        enableDarkMode(false);
     }
+
+
 })
 
 
@@ -356,25 +352,87 @@ elModeBtn.addEventListener('click', (evt) => {
 
 
 
+function checkDarkMode() {
+    if(localStorage.getItem("dark")) return true;
+    return false;
+}
 
+function enableDarkMode(on = true) {
+    
+    const elHeaderList = get('js-header-list');
+    const elProductsInnerLists = get('js-products-inner-list', true);
+    const elBrandsList = get('js-brands-list');
+    const elSecurityList = get('js-security-list');
+    const elSocialList = get('js-social-list');
+    const elAuthCloseBtn = get('js-auth-close-btn');
+    const elEyeIcon = get('js-eye-icon');
 
+    if(on) {
+        // Remove transition while mode change 
+        document.body.classList.add('disable-transitions');
+        setTimeout(() => document.body.classList.remove('disable-transitions'), 0);
+        // Add dark mode 
+        document.body.classList.add('dark');
+        elModeBtn.classList.add('dark-mode-btn');
+        elAuthCloseBtn.classList.add('auth__close-btn--dark');
+        elEyeIcon.classList.add('eye-icon--dark');
 
+        Array.from(elHeaderList.children).forEach(item => {
+            item.classList.add('site-header__item--dark');
+        });
+    
+        Array.from(elSecurityList.children).forEach(item => {
+            item.classList.add('security__item--dark');
+        });
+    
+        Array.from(elBrandsList.children).forEach(item => {
+            item.classList.add('brands__item--dark');
+        });
+    
+        Array.from(elSocialList.children).forEach(item => {
+            item.classList.add('social__item--dark');
+        });
+    
+        elProductsInnerLists.forEach(list => {
+            Array.from(list.children).forEach(item => {
+                item.classList.add('products__inner-item--dark');
+            });
+        });
+    }else {
+        // Remove transition while mode change 
+        document.body.classList.add('disable-transitions');
+        setTimeout(() => document.body.classList.remove('disable-transitions'), 0);
+        // Remove dark mode 
+        document.body.classList.remove('dark');
+        elModeBtn.classList.remove('dark-mode-btn');
+        elAuthCloseBtn.classList.remove('auth__close-btn--dark');
+        elEyeIcon.classList.remove('eye-icon--dark');
 
+        Array.from(elHeaderList.children).forEach(item => {
+            item.classList.remove('site-header__item--dark');
+        });
+    
+        Array.from(elSecurityList.children).forEach(item => {
+            item.classList.remove('security__item--dark');
+        });
+    
+        Array.from(elBrandsList.children).forEach(item => {
+            item.classList.remove('brands__item--dark');
+        });
+    
+        Array.from(elSocialList.children).forEach(item => {
+            item.classList.remove('social__item--dark');
+        });
+    
+        elProductsInnerLists.forEach(list => {
+            Array.from(list.children).forEach(item => {
+                item.classList.remove('products__inner-item--dark');
+            });
+        });
 
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 

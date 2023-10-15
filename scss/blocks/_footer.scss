@@ -1,5 +1,34 @@
 @use "../mixins" as mx;
 
+
+.social__item--dark  {
+    background-color: #fff !important;
+
+    $list: "instagram-white.svg", "twitter-white.svg", "facebook-white.svg", "whatsapp-white.svg";
+    $i: 1;
+    @each $img in $list {
+        &:nth-child(#{$i}) .site-footer__social-img {
+            content: url("../images/svg/dark/#{$img}");
+        }
+
+        $i: $i + 1;
+    }
+
+    &:nth-child(1):hover .site-footer__social-img {
+        content: url("../images/svg/instagram.svg") !important;
+    }
+
+    &:nth-child(2):hover .site-footer__social-img {
+        content: url("../images/svg/twitter.svg") !important;
+    }
+
+    &:nth-child(3):hover .site-footer__social-img {
+        content: url("../images/svg/facebook.svg") !important;
+    }
+
+}
+
+
 @media only screen and (min-width: 0) {
     .site-footer {
         padding-top: 20px;
@@ -123,19 +152,19 @@
         background-color: #000;
 
         &:first-child:hover {
-            background-image: radial-gradient(230.93% 230.93% at 102.01% 2.03%, #F9ED32 0%, #EE2A7B 36%, #D22A8A 44%, #8B2AB2 60%, #1B2AF0 83%, #002AFF 88%);
+            background-image: radial-gradient(230.93% 230.93% at 102.01% 2.03%, #F9ED32 0%, #EE2A7B 36%, #D22A8A 44%, #8B2AB2 60%, #1B2AF0 83%, #002AFF 88%) !important;
         }
 
         &:nth-child(2):hover {
-            background-color: #55ace3;
+            background-color: #55ace3 !important;
         }
 
         &:nth-child(3):hover {
-            background-color: #0b84ee;
+            background-color: #0b84ee !important;
         }
 
         &:nth-child(4):hover {
-            background-color: #48c95f;
+            background-color: #48c95f !important;
         }
 
         &:nth-child(4):hover .site-footer__social-img {

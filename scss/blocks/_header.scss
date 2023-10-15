@@ -30,6 +30,12 @@
     background: var(--main-card-bg) url("../images/svg/sun.svg") no-repeat center !important;
 }
 
+.site-header__item--dark {
+    &::after {
+        background: url("../images/svg/dark/arrdown-white.svg") no-repeat center !important;
+    }
+}
+
 
 @media only screen and (max-width: 375px) {
     .container {
@@ -625,6 +631,10 @@
 
         &:hover {
             background-color: var(--main-hover-color);
+        }
+
+        &:hover .site-header__inner-link {
+            color: var(--tertiary-text-color);
         }
 
         &:active  {

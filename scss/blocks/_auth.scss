@@ -1,5 +1,17 @@
 @use "../mixins" as mx;
 
+.auth__close-btn--dark {
+    background: var(--main-card-bg) url("../images/svg/dark/close-white.svg") no-repeat center !important;
+}
+
+.eye-icon--dark {
+    background: url("../images/svg/dark/eye-white.svg") no-repeat center !important;
+}
+
+.eye-closed--dark {
+    background: url("../images/svg/dark/eyeclosed-white.svg") no-repeat center !important;
+}
+
 
 @include mx.mobile-first(0) {
     .auth {

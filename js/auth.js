@@ -31,7 +31,8 @@ elAuthCloseBtn.addEventListener('click', (evt) => {
 });
 
 elEyeIcon.addEventListener('click', (evt) => {
-    elEyeIcon.classList.toggle('eye-closed');
+    if(localStorage.getItem("dark")) elEyeIcon.classList.toggle('eye-closed--dark');
+    else elEyeIcon.classList.toggle('eye-closed');
     elPasswordInput.type === 'password' ? elPasswordInput.type = 'text' : elPasswordInput.type = 'password';
 });
 

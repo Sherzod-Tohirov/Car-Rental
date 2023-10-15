@@ -395,6 +395,11 @@ img {
           flex-grow: 1;
 }
 
+.disable-transitions * {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
 @media only screen and (min-width: 0) {
   .scroll-top-btn {
     position: fixed;
@@ -509,6 +514,10 @@ img {
 
 .dark-mode-btn {
   background: var(--main-card-bg) url("../images/svg/sun.svg") no-repeat center !important;
+}
+
+.site-header__item--dark::after {
+  background: url("../images/svg/dark/arrdown-white.svg") no-repeat center !important;
 }
 
 @media only screen and (max-width: 375px) {
@@ -1429,6 +1438,9 @@ img {
   }
   .site-header__inner-item:hover {
     background-color: var(--main-hover-color);
+  }
+  .site-header__inner-item:hover .site-header__inner-link {
+    color: var(--tertiary-text-color);
   }
   .site-header__inner-item:active {
     background-color: var(--main-hover-greenish-color);
@@ -2529,6 +2541,19 @@ img {
 
 .products__item:hover .products__inner-item:nth-child(4):before {
   background-image: url("../images/svg/fuel_dark.svg");
+}
+
+.products__inner-item--dark:first-child:before {
+  background-image: url("../images/svg/dark/user-white.svg") !important;
+}
+.products__inner-item--dark:nth-child(2):before {
+  background-image: url("../images/svg/dark/gear-white.svg") !important;
+}
+.products__inner-item--dark:nth-child(3):before {
+  background-image: url("../images/svg/dark/user_file-white.svg") !important;
+}
+.products__inner-item--dark:nth-child(4):before {
+  background-image: url("../images/svg/dark/fuel-white.svg") !important;
 }
 
 @media only screen and (max-width: 375px) {
@@ -3663,7 +3688,7 @@ img {
     right: -10px;
     width: 20px;
     height: 20px;
-    background-color: #fff;
+    background-color: var(--main-bg);
     content: "";
   }
   .testimonials__rating-desc {
@@ -4067,7 +4092,7 @@ img {
     right: -10px;
     width: 20px;
     height: 20px;
-    background-color: #fff;
+    background-color: var(--main-bg);
     content: "";
   }
   .testimonials__rating-desc {
@@ -4514,7 +4539,7 @@ img {
     right: -10px;
     width: 20px;
     height: 20px;
-    background-color: #fff;
+    background-color: var(--main-bg);
     content: "";
   }
   .testimonials__rating-desc {
@@ -4623,6 +4648,22 @@ img {
     background: var(--main-greenish-color) url("../images/svg/arr_right_white.svg") no-repeat center;
   }
 }
+.brands__item--dark:nth-child(2) .brands__img {
+  content: url("../images/svg/dark/nissan-white.svg");
+}
+.brands__item--dark:nth-child(3) .brands__img {
+  content: url("../images/svg/dark/toyota-white.svg");
+}
+.brands__item--dark:nth-child(4) .brands__img {
+  content: url("../images/svg/dark/dodge-white.svg");
+}
+.brands__item--dark:nth-child(5) .brands__img {
+  content: url("../images/svg/dark/hyundai-white.svg");
+}
+.brands__item--dark:nth-child(6) .brands__img {
+  content: url("../images/svg/dark/jeep-white.svg");
+}
+
 @media only screen and (min-width: 0) {
   .brands {
     padding-top: 100px;
@@ -4993,6 +5034,16 @@ img {
     line-height: 24px;
   }
 }
+.security__item--dark:nth-child(1):after {
+  background-image: url("../images/svg/dark/beaker-white.svg") !important;
+}
+.security__item--dark:nth-child(2):after {
+  background-image: url("../images/svg/dark/heartrate-white.svg") !important;
+}
+.security__item--dark:nth-child(3):after {
+  background-image: url("../images/svg/dark/folder-lock-white.svg") !important;
+}
+
 @media only screen and (min-width: 0) {
   .security {
     padding-bottom: 100px;
@@ -5252,6 +5303,18 @@ img {
     background-size: 386px 470px;
   }
 }
+.auth__close-btn--dark {
+  background: var(--main-card-bg) url("../images/svg/dark/close-white.svg") no-repeat center !important;
+}
+
+.eye-icon--dark {
+  background: url("../images/svg/dark/eye-white.svg") no-repeat center !important;
+}
+
+.eye-closed--dark {
+  background: url("../images/svg/dark/eyeclosed-white.svg") no-repeat center !important;
+}
+
 @media only screen and (min-width: 0) {
   .auth {
     position: fixed;
@@ -5593,6 +5656,31 @@ img {
     margin-bottom: 32px;
   }
 }
+.social__item--dark {
+  background-color: #fff !important;
+}
+.social__item--dark:nth-child(1) .site-footer__social-img {
+  content: url("../images/svg/dark/instagram-white.svg");
+}
+.social__item--dark:nth-child(2) .site-footer__social-img {
+  content: url("../images/svg/dark/twitter-white.svg");
+}
+.social__item--dark:nth-child(3) .site-footer__social-img {
+  content: url("../images/svg/dark/facebook-white.svg");
+}
+.social__item--dark:nth-child(4) .site-footer__social-img {
+  content: url("../images/svg/dark/whatsapp-white.svg");
+}
+.social__item--dark:nth-child(1):hover .site-footer__social-img {
+  content: url("../images/svg/instagram.svg") !important;
+}
+.social__item--dark:nth-child(2):hover .site-footer__social-img {
+  content: url("../images/svg/twitter.svg") !important;
+}
+.social__item--dark:nth-child(3):hover .site-footer__social-img {
+  content: url("../images/svg/facebook.svg") !important;
+}
+
 @media only screen and (min-width: 0) {
   .site-footer {
     padding-top: 20px;
@@ -5863,16 +5951,16 @@ img {
     background-color: #000;
   }
   .site-footer__social-item:first-child:hover {
-    background-image: radial-gradient(230.93% 230.93% at 102.01% 2.03%, #F9ED32 0%, #EE2A7B 36%, #D22A8A 44%, #8B2AB2 60%, #1B2AF0 83%, #002AFF 88%);
+    background-image: radial-gradient(230.93% 230.93% at 102.01% 2.03%, #F9ED32 0%, #EE2A7B 36%, #D22A8A 44%, #8B2AB2 60%, #1B2AF0 83%, #002AFF 88%) !important;
   }
   .site-footer__social-item:nth-child(2):hover {
-    background-color: #55ace3;
+    background-color: #55ace3 !important;
   }
   .site-footer__social-item:nth-child(3):hover {
-    background-color: #0b84ee;
+    background-color: #0b84ee !important;
   }
   .site-footer__social-item:nth-child(4):hover {
-    background-color: #48c95f;
+    background-color: #48c95f !important;
   }
   .site-footer__social-item:nth-child(4):hover .site-footer__social-img {
     content: url("../images/svg/whatsapp-clr.svg");

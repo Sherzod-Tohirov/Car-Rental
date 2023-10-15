@@ -1,5 +1,17 @@
 @use "../mixins" as mx;
 
+.brands__item--dark {
+  $list: "nissan-white.svg", "toyota-white.svg", "dodge-white.svg", "hyundai-white.svg", "jeep-white.svg";
+  $i: 2;
+  @each $img in $list {
+    &:nth-child(#{$i}) .brands__img {
+        content: url("../images/svg/dark/#{$img}");
+    }
+    $i: $i + 1;
+  }
+
+}
+
 @media only screen and (min-width: 0) {
     .brands {
         padding-top: 100px;

@@ -1,8 +1,19 @@
 @use "../mixins" as mx;
 
-@media only screen and (max-width: 375px) {
+.security__item--dark {
+    $images: "beaker-white.svg", "heartrate-white.svg", "folder-lock-white.svg";
+    $i: 1;
+    @each $image in $images {
+        &:nth-child(#{$i}):after {
+            background-image: url("../images/svg/dark/#{$image}") !important;
+        }
+
+        $i: $i + 1;
+
+    }
 
 }
+
 
 @media only screen and (min-width: 0) {
     .security {
