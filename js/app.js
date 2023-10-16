@@ -370,7 +370,7 @@ function enableDarkMode(on = true) {
     const elEyeIcon = get('js-eye-icon');
     const elMenuBtn = get('js-menu-btn');
     const elCloseBtn = get('js-close-btn');
-    
+
     if(on) {
        
         // Remove transition while mode change 
@@ -414,6 +414,8 @@ function enableDarkMode(on = true) {
         
         // Remove dark mode 
         document.body.classList.remove('dark');
+        setTimeout(() => {if(document.body.classList.length == 0) document.body.removeAttribute('class')}, 1);
+
         elModeBtn.classList.remove('dark-mode-btn');
         elAuthCloseBtn.classList.remove('auth__close-btn--dark');
         elEyeIcon.classList.remove('eye-icon--dark');
