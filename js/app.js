@@ -1,10 +1,6 @@
+// Mode btn 
+
 const elModeBtn = get('js-mode-btn');
-
-// Handle dark mode 
-
-if(checkDarkMode()) enableDarkMode();
-else enableDarkMode(false);
-
 
 // Close and Menu 
 
@@ -13,6 +9,12 @@ const elCloseBtn = get('js-close-btn');
 const elInnerHeader = get('js-inner-header');
 const elOverlay = get('js-overlay');
 let switched = false;
+
+// Handle dark mode 
+
+if(checkDarkMode()) enableDarkMode();
+else enableDarkMode(false);
+
 
 // Add and remove sidebar 
 
@@ -366,17 +368,23 @@ function enableDarkMode(on = true) {
     const elSocialList = get('js-social-list');
     const elAuthCloseBtn = get('js-auth-close-btn');
     const elEyeIcon = get('js-eye-icon');
-
+    const elMenuBtn = get('js-menu-btn');
+    const elCloseBtn = get('js-close-btn');
+    
     if(on) {
+       
         // Remove transition while mode change 
         document.body.classList.add('disable-transitions');
         setTimeout(() => document.body.classList.remove('disable-transitions'), 0);
+       
         // Add dark mode 
         document.body.classList.add('dark');
         elModeBtn.classList.add('dark-mode-btn');
         elAuthCloseBtn.classList.add('auth__close-btn--dark');
         elEyeIcon.classList.add('eye-icon--dark');
-
+        elMenuBtn.classList.add('site-header__menu-btn--dark');
+        elCloseBtn.classList.add('inner-header__close-btn--dark');
+       
         Array.from(elHeaderList.children).forEach(item => {
             item.classList.add('site-header__item--dark');
         });
@@ -399,14 +407,18 @@ function enableDarkMode(on = true) {
             });
         });
     }else {
+        
         // Remove transition while mode change 
         document.body.classList.add('disable-transitions');
         setTimeout(() => document.body.classList.remove('disable-transitions'), 0);
+        
         // Remove dark mode 
         document.body.classList.remove('dark');
         elModeBtn.classList.remove('dark-mode-btn');
         elAuthCloseBtn.classList.remove('auth__close-btn--dark');
         elEyeIcon.classList.remove('eye-icon--dark');
+        elMenuBtn.classList.remove('site-header__menu-btn--dark');
+        elCloseBtn.classList.remove('inner-header__close-btn--dark');
 
         Array.from(elHeaderList.children).forEach(item => {
             item.classList.remove('site-header__item--dark');

@@ -36,6 +36,14 @@
     }
 }
 
+.site-header__menu-btn--dark {
+    background: url("../images/svg/dark/menu-white.svg") no-repeat center !important;
+}
+
+.inner-header__close-btn--dark {
+    background: var(--main-card-bg) url("../images/svg/dark/close-white.svg") no-repeat center !important;
+}
+
 
 @media only screen and (max-width: 375px) {
     .container {
